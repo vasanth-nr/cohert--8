@@ -170,10 +170,11 @@ Read:
 
 
 Sol: ls =s1+' '+s2+' '+s3
+ls=ls.replace(',' , '')
+ls=ls.replace('.' , '')
 ls2 =ls.split(' ')
 print(ls2)
 l1 ={}
-
 for q in ls2 :
 	     if q in ls2:
 	         l1[q] =ls2.count(q)
@@ -181,6 +182,9 @@ for q in ls2 :
 	         l1[q] =1
 
 print(l1)
+
+print(len(l1))
+
 
 Test Cases:s1+
 
@@ -237,6 +241,9 @@ def print_dict_keys_and_values(d):
 
 * Define a function that returns a list of all the items in a dictionary sorted by the dictionary's keys.
 
+def sortedList(dic):
+    list1 =list(dic.items())
+    return list1.sort()
 Example:
 
 Input: 
@@ -282,7 +289,12 @@ Sol: def n_digit_primes(n=2):
  ad = def n_digit_primes(n=1)
  
 * Define a function, `args_sum` that accepts an arbitrary number of integers as input and computes their sum.
-Sol: def args_sum()
+Sol: def args_sum(*args):
+          li = list(*arg)
+          x = 0
+          for i in range((len(li)-1)):
+             x = li[i]+x
+	     return x
 * Modify the args_sum function so that it accepts an optional, boolean, keyword argument named `absolute`. If `absolute` is True, then `args_sum` must return the absolute value of the sum of `*args`. If absolute is not specified, then return the sum without performing any conversion.
 
 ```
