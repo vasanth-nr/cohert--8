@@ -1,0 +1,365 @@
+## Numbers
+
+* Can you cause an integer overflow in Python?
+Sol: NO
+* What is result of
+    - 7/2 =3.5
+    - 7//2 =3
+    - -7/2 = -3.5
+    - -7//2 = -4
+______________________
+
+## Strings
+
+```
+x = "one two three four"
+```
+
+* Print the last 3 characters of `x`
+Sol :x[-3:]
+* Print the first 10 characters of `x` 
+Sol: x[:10]
+* Print characetrs 4 through 10 of `x`
+Sol : x[4:10]
+* Find the length of `x`
+Sol: len(x)
+* Split `x` into its words
+Sol: x.split(" ")
+* Capitalize the first character of `x`
+  Sol: x.capitaloze()
+* Convert `x` into uppercase
+   x.upper()
+```
+x = "one two three four"
+y = x
+x = "one two three"
+```
+After executing the above code, what is the value of `y`?
+Sol: y= "one two three four"
+__________
+
+## Lists
+
+```
+x = [3, 1, 2, 4, 1, 2]
+```
+
+* Find the sum of all the elements in `x`
+Sol: sum(x)
+* Find the length of `x`
+Sol: len(x)
+* Print the last three items of `x`
+  Sol: x[-3:]
+* Print the first three items of `x`
+Sol: x[:3]
+* Sort `x`
+Sol: x.sort()
+* Add another item, `10` to `x`
+Sol: x.append(10)
+* Add another item `11` to `x`
+Sol: x.append(11)
+* Remove the last item from `x`
+Sol: x.pop()
+* How many times does `1` occur in `x`?
+Sol: x.count(5)
+* Check whether the element `10` is present in `x`
+sol: 10 in x
+```
+y = [5, 1, 2, 3]
+```
+
+* Add all the elements of `y` to `x`
+Sol:  x= y
+* Create a copy of `x`
+ Sol: x_ =x.copy()
+* Can a list contain elements of different data-types?
+Sol: Yes
+* Which data structure does Python use to implement a list?
+ Sol: Arraylist/Vector (list itself is a data structure)  
+
+## If / Else
+
+```
+x = 1
+y = 10
+if x > y:
+    x = y
+else:
+    y = x + 1
+```
+What is `y` after the above code is executed?
+Sol: 2
+__________
+
+## for, range and while
+
+https://conceptcoaster.com/course/python-tutorial/for-and-range/
+
+```
+x = [1, 2, 3, 4]
+```
+
+* Print all the elements in `x`
+ Sol: for q in range(len(a)):
+      print(a[q])
+* Print all the elements and their indexes using the `enumerate` function
+  Sol: for a, value in enumerate(x):
+      print(a.value)
+* Print all the integers from 10 to 0 in descending order using `range`
+     print(list(range(10,-1,-1)))
+* Print all the integers from 10 to 0 in descending order using `while`
+   n ,i =10,0
+   while (i<=n):
+	     print(n)
+	     n=n-1
+______
+
+## break, and continue
+
+* Print all the two-digit prime numbers.
+   for num in range(10,100):
+	     if num>1:
+	        for a in range(2,num):
+	             if (num%a)==0:
+	                 break
+	        else:
+	             print(num)
+
+## Functions - 1
+
+* https://conceptcoaster.com/course/python-tutorial/defining-functions-1/
+
+* Write a function that accepts an integer `n`, `n > 0`, and returns a `list` of all *n-digit* prime number
+                      
+Sol:   
+```
+def n_digit_primes(n):
+    primes = []
+    if(n>0):
+	         for num in range(2,n+1):
+	            if num>1:
+	               for a in range(2,num):
+	                   if (num%a)==0:
+	                                break
+	               else:
+	                    primes.append(num)
+    return primes
+```
+
+* Did you write a helper function? If not, write a helper function, `is_prime` that returns whether a number is prime or not, and use it in your `n_digit_primes` function
+ def n_digit_primes(n):
+      return  is_prime(n)
+      
+      
+ def is_prime(n):
+    if(n>0):
+	         for num in range(2,n+1):
+	            if num>1:
+	               for a in range(2,num):
+	                   if (num%a)==0:
+	                                return "not prime"
+                 else:
+                     return "is prime"
+## Dictionaries
+
+Read:
+* https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+* https://conceptcoaster.com/course/python-tutorial/dictionaries/
+
+* Write a function to find the number of occurrences of each word in a string(Don't consider punctuation characters)
+
+
+Sol: ls =s1+' '+s2+' '+s3
+ls2 =ls.split(' ')
+print(ls2)
+l1 ={}
+
+for q in ls2 :
+	     if q in ls2:
+	         l1[q] =ls2.count(q)
+	     else :
+	         l1[q] =1
+
+print(l1)
+
+Test Cases:s1+
+
+Test Case 0:
+
+Empty String
+
+Output: `{}`
+
+Test Case 1
+
+Input:
+```
+Python is an interpreted, high-level, general-purpose programming language.
+Python interpreters are available for many operating systems.
+Python is a multi-paradigm programming language. Object-oriented programming and structured programming are fully supported.
+```
+
+Output:
+
+```
+{'Object-oriented': 1,
+         'Python': 3,
+         'a': 1,
+         'an': 1,
+         'and': 1,
+         'are': 2,
+         'available': 1,
+         'for': 1,
+         'fully': 1,
+         'general-purpose': 1,
+         'high-level': 1,
+         'interpreted': 1,
+         'interpreters': 1,
+         'is': 2,
+         'language': 2,
+         'many': 1,
+         'multi-paradigm': 1,
+         'operating': 1,
+         'programming': 4,
+         'structured': 1,
+         'supported': 1,
+         'systems': 1}
+```
+
+* Define a function that prints all the `items` (keys, values) in a dictionary
+
+```
+def print_dict_keys_and_values(d):
+    # your logic here
+    for i,a in d.items():
+        print(i,a)
+```
+
+* Define a function that returns a list of all the items in a dictionary sorted by the dictionary's keys.
+
+Example:
+
+Input: 
+
+```
+{'c': 2, 'b': 3, 'a': 1}
+```
+
+Output:
+
+```
+[('a', 1), ('b', 3), ('c', 2)]
+```
+
+## functions 2
+
+* https://conceptcoaster.com/course/python-tutorial/defining-functions-2/
+
+* To the `n_digit_primes` function, set the default value of argument `n` to 2
+Sol: def n_digit_primes(n=2):
+    primes = []
+    if(n>0):
+	         for num in range(2,n+1):
+	            if num>1:
+	               for a in range(2,num):
+	                   if (num%a)==0:
+	                                break
+	               else:
+	                    primes.append(num)
+    return primes
+* Call the `n_digit_primes` with a keyword argument, `n_digit_primes(n=1)`
+ Sol : def n_digit_primes(n):
+    primes = []
+    if(n>0):
+	         for num in range(2,n+1):
+	            if num>1:
+	               for a in range(2,num):
+	                   if (num%a)==0:
+	                                break
+	               else:
+	                    primes.append(num)
+    return primes
+ ad = def n_digit_primes(n=1)
+ 
+* Define a function, `args_sum` that accepts an arbitrary number of integers as input and computes their sum.
+Sol: def args_sum()
+* Modify the args_sum function so that it accepts an optional, boolean, keyword argument named `absolute`. If `absolute` is True, then `args_sum` must return the absolute value of the sum of `*args`. If absolute is not specified, then return the sum without performing any conversion.
+
+```
+def args_sum(*args, **kwargs):
+    # Your logic here
+```
+
+
+## Classes
+
+* Create a class called `Point` which has two instance variables, `x` and `y` that represent the `x` and `y` co-ordinates respectively. Initialize these instance variables in the `__init__` method
+Sol: class Point :
+ def __init__(self,x,y):
+    self.x = x
+    self.y = y
+    
+ def sum(self):
+       print(self.x +self.y)
+p1 = Point(4,5)
+
+p1.sum()
+* Define a method, `distance` on `Point` which accepts another `Point` object as an argument and returns the distance between the two points.
+import math
+class Point :
+ def __init__(self,x,y):
+    self.x = x
+    self.y = y
+#
+p1 = Point(4,5)
+def distance (self):
+    return math.sqrt ((self.x**2+self.y**2))
+
+print(distance(p1))
+
+## Modules
+
+Read https://conceptcoaster.com/course/python-tutorial/modules/
+
+* Organize the code you've written so far into modules.
+
+
+## IO and String Formatting, File Operations
+
+* https://conceptcoaster.com/course/python-tutorial/io-and-string-formatting/
+
+* Save the first `n` natural numbers and their squares into a file in the csv format.
+
+```
+def numbers_and_squares(n, file_path):
+    # Your logic here
+```
+
+Example Output for `n=3`
+
+1,1
+2,4
+3,9
+
+
+## sets
+
+* https://conceptcoaster.com/course/python-tutorial/sets/
+
+
+Define a function that does the equivalent of `uniq <file_path> | sort`, i.e., the function should
+
+1. Accept a file path as the argument
+2. Read the contents of the file into a string
+3. Split the string into lines
+4. Remove duplicate lines
+5. Sort the lines
+6. Return the sorted lines
+
+## Exceptions
+
+Modify the above function so that it raises a `FilepathNotValid` exception when you provide a `file_path` that does not exist
+
+____________________
+
+Also upload all the code you wrote when going through the tutorials.
